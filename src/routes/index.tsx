@@ -486,69 +486,65 @@ function SectionBlock({ section, index }: { section: Section; index: number }) {
         </div>
       </Reveal>
 
-      <Reveal delay={80}>
-        <div className="mt-8">
-          <Markdown source={section.body} />
-        </div>
-      </Reveal>
+      {section.body ? (
+        <Reveal delay={80}>
+          <div className="mt-8">
+            <Markdown source={section.body} />
+          </div>
+        </Reveal>
+      ) : null}
+
+      {section.extra ? <div className="mt-2">{section.extra}</div> : null}
+
+      {section.after ? (
+        <Reveal>
+          <div className="mt-10">
+            <Markdown source={section.after} />
+          </div>
+        </Reveal>
+      ) : null}
 
       {index === SECTIONS.length - 1 ? null : <div className="pt-4" />}
     </section>
   );
 }
 
-/* ---------------- continuation ---------------- */
+/* ---------------- action plan extras ---------------- */
 
-const PENDING = [
-  { n: "06", t: "Learning Roadmap — Six Phases" },
-  { n: "07", t: "Portfolio Projects That Read as Proof" },
-  { n: "08", t: "Do You Need a Course? Six Alternatives Compared" },
-  { n: "09", t: "AI Engineer Interview Preparation" },
-  { n: "10", t: "Career Plan — Titles, Companies, Salary" },
-  { n: "11", t: "Common Mistakes That End Transitions" },
-  { n: "12", t: "Final Action Plan" },
-];
-
-function Continuation() {
+function ActionPlanExtras() {
   return (
-    <section className="mt-24">
-      <div className="hairline mb-10" />
-      <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold tracking-[-0.03em] text-foreground">
-        Still to come
-      </h2>
+    <div className="mt-4">
+      <h3 className="font-[family-name:var(--font-display)] text-xl font-bold tracking-[-0.02em] text-foreground">
+        The 30 / 60 / 90 / 180-Day Checklist
+      </h3>
       <p className="mt-2 text-muted-foreground">
-        The remaining seven sections of the guide.
+        Tick items as you go — the state is yours for this session. Each block ends in a milestone that is
+        either true or not true.
       </p>
-      <div className="mt-7 grid gap-3 sm:grid-cols-2">
-        {PENDING.map((p, i) => (
-          <Reveal key={p.n} delay={i * 50}>
-            <div className="surface-card flex items-center gap-4 p-4">
-              <span className="flex h-9 w-9 flex-none items-center justify-center rounded-xl bg-accent font-[family-name:var(--font-display)] text-xs font-bold tabular-nums text-accent-foreground">
-                {p.n}
-              </span>
-              <span className="text-sm font-medium leading-snug text-secondary-foreground">
-                {p.t}
-              </span>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-    </section>
+      <ActionChecklist />
+
+      <h3 className="mt-16 font-[family-name:var(--font-display)] text-xl font-bold tracking-[-0.02em] text-foreground">
+        Interactive Decision Tool — Answer These Questions
+      </h3>
+      <p className="mt-2 text-muted-foreground">
+        Six answers map you to one of the profiles below, with a primary path, an honest runner-up and a
+        realistic timeline band.
+      </p>
+      <DecisionQuiz />
+
+      <h3 className="mt-16 font-[family-name:var(--font-display)] text-xl font-bold tracking-[-0.02em] text-foreground">
+        The Final Recommendation
+      </h3>
+      <Markdown source={finalRecommendation} className="mt-4" />
+
+      <a
+        href="#logicmojo-contact"
+        className="group mt-7 inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-5 py-3.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform duration-300 hover:-translate-y-0.5"
+      >
+        See the LogicMojo AI &amp; ML Course curriculum and upcoming batches
+        <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+      </a>
+    </div>
   );
 }
 
-/* ---------------- footer ---------------- */
-
-function Footer() {
-  return (
-    <footer className="relative border-t border-border bg-card/70 backdrop-blur-sm">
-      <div className="mx-auto w-full max-w-[78rem] px-5 py-10 sm:px-8">
-        <p className="max-w-3xl text-xs leading-relaxed text-muted-foreground">
-          All salary figures are the author's planning bands informed by self-reported
-          aggregates and are not published averages. Timelines are estimates from tracked
-          transitions, not promises. No course guarantees a job — including any mentioned here.
-        </p>
-      </div>
-    </footer>
-  );
-}

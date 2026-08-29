@@ -28,7 +28,7 @@ export function DecisionQuiz() {
       <div className="p-6 sm:p-9">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <span className="inline-flex items-center gap-2 rounded-full bg-accent px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-accent-foreground">
-            🧭 Interactive decision tool
+            Interactive decision tool
           </span>
           <span className="text-xs font-semibold tabular-nums text-muted-foreground">
             {done ? "Result" : `Question ${step + 1} of ${QUIZ.length}`}

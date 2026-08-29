@@ -262,14 +262,12 @@ function Guide() {
               <SectionBlock key={section.id} section={section} index={i} />
             ))}
 
-            <Reveal>
-              <Continuation />
-            </Reveal>
+            <AuthorTrust />
           </div>
         </div>
       </main>
 
-      <Footer />
+      <SiteFooter />
     </div>
   );
 }

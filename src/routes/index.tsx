@@ -59,7 +59,22 @@ export const Route = createFileRoute("/")({
               "@type": "Article",
               headline: TITLE,
               description: DESCRIPTION,
-              author: { "@type": "Person", name: "LogicMojo Editorial" },
+              author: {
+                "@type": "Person",
+                name: "LogicMojo Editorial",
+                jobTitle: "AI hiring researcher and former full stack engineer",
+                description:
+                  "Twelve years shipping production web software before moving into applied AI; researches how Indian teams hire AI engineers.",
+                knowsAbout: [
+                  "AI Engineering",
+                  "Machine Learning Engineering",
+                  "Generative AI",
+                  "Retrieval Augmented Generation",
+                  "MLOps",
+                  "Full Stack Development",
+                  "Tech hiring in India",
+                ],
+              },
               publisher: {
                 "@type": "Organization",
                 name: "LogicMojo",

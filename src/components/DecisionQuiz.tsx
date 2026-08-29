@@ -2,15 +2,16 @@ import { useState } from "react";
 import { QUIZ, RESULTS, type QuizResult } from "@/content/data";
 
 function resolve(a: Record<string, string>): QuizResult {
-  if (a.credential === "yes") return RESULTS.credential;
-  if (a.budget === "zero") return RESULTS.selfStarter;
-  if (a.budget === "premium" && a.context === "product" && a.years !== "senior") return RESULTS.placement;
-  if (a.years === "senior") return RESULTS.lead;
-  if (a.context === "services") return RESULTS.internal;
-  if (a.context === "freelance") return RESULTS.freelancer;
-  if (a.profile === "frontend") return RESULTS.rebuilder;
-  if (a.profile === "backend") return RESULTS.accelerator;
-  return RESULTS.accelerator;
+  const pick = (k: string) => RESULTS[k] as QuizResult;
+  if (a["credential"] === "yes") return pick("credential");
+  if (a["budget"] === "zero") return pick("selfStarter");
+  if (a["budget"] === "premium" && a["context"] === "product" && a["years"] !== "senior")
+    return pick("placement");
+  if (a["years"] === "senior") return pick("lead");
+  if (a["context"] === "services") return pick("internal");
+  if (a["context"] === "freelance") return pick("freelancer");
+  if (a["profile"] === "frontend") return pick("rebuilder");
+  return pick("accelerator");
 }
 
 export function DecisionQuiz() {
@@ -75,7 +76,9 @@ export function DecisionQuiz() {
 
         {done && result ? (
           <div className="mt-7">
-            <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-primary">Your profile</p>
+            <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-primary">
+              Your profile
+            </p>
             <h4 className="mt-1.5 font-[family-name:var(--font-display)] text-2xl font-bold tracking-[-0.03em] text-gradient">
               {result.name}
             </h4>
@@ -91,7 +94,9 @@ export function DecisionQuiz() {
                 <p className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-muted-foreground">
                   Runner-up
                 </p>
-                <p className="mt-1.5 text-sm font-semibold text-secondary-foreground">{result.runnerUp}</p>
+                <p className="mt-1.5 text-sm font-semibold text-secondary-foreground">
+                  {result.runnerUp}
+                </p>
               </div>
             </div>
 

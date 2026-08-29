@@ -94,7 +94,11 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-export type GapRow = { area: string; covered: "Yes" | "Partial" | "[verify current syllabus]"; phase: string };
+export type GapRow = {
+  area: string;
+  covered: "Yes" | "Partial" | "[verify current syllabus]";
+  phase: string;
+};
 
 export const GAP_COVERAGE: GapRow[] = [
   { area: "Python depth for engineers", covered: "Yes", phase: "Phase 1" },
@@ -112,7 +116,11 @@ export const GAP_COVERAGE: GapRow[] = [
   { area: "MCP (Model Context Protocol)", covered: "[verify current syllabus]", phase: "Phase 4" },
   { area: "Fine-tuning (LoRA/QLoRA) decision framework", covered: "Partial", phase: "Phase 4" },
   { area: "Deployment, serving & MLOps for LLMs", covered: "Partial", phase: "Phase 5" },
-  { area: "Guardrails, monitoring & cost control", covered: "[verify current syllabus]", phase: "Phase 5" },
+  {
+    area: "Guardrails, monitoring & cost control",
+    covered: "[verify current syllabus]",
+    phase: "Phase 5",
+  },
 ];
 
 export const LIMITATIONS: { title: string; body: string }[] = [
@@ -208,7 +216,11 @@ export const CHECKLIST: ChecklistBlock[] = [
   },
 ];
 
-export type QuizQuestion = { id: string; question: string; options: { label: string; value: string }[] };
+export type QuizQuestion = {
+  id: string;
+  question: string;
+  options: { label: string; value: string }[];
+};
 
 export const QUIZ: QuizQuestion[] = [
   {
@@ -266,7 +278,13 @@ export const QUIZ: QuizQuestion[] = [
   },
 ];
 
-export type QuizResult = { name: string; path: string; runnerUp: string; reason: string; band: string };
+export type QuizResult = {
+  name: string;
+  path: string;
+  runnerUp: string;
+  reason: string;
+  band: string;
+};
 
 export const RESULTS: Record<string, QuizResult> = {
   accelerator: {

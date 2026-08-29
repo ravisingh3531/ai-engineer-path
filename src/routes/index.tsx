@@ -236,7 +236,6 @@ const STATS = [
   { value: "6–10", label: "Months to job-ready at 10–15 hrs/week (author's band)" },
 ];
 
-
 function Guide() {
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-background">
@@ -450,7 +449,6 @@ function TableOfContents() {
             </li>
           </ul>
         </div>
-
       </nav>
     </aside>
   );
@@ -536,8 +534,8 @@ function ActionPlanExtras() {
         The 30 / 60 / 90 / 180-Day Checklist
       </h3>
       <p className="mt-2 text-muted-foreground">
-        Tick items as you go — the state is yours for this session. Each block ends in a milestone that is
-        either true or not true.
+        Tick items as you go — the state is yours for this session. Each block ends in a milestone
+        that is either true or not true.
       </p>
       <ActionChecklist />
 
@@ -545,8 +543,8 @@ function ActionPlanExtras() {
         Interactive Decision Tool — Answer These Questions
       </h3>
       <p className="mt-2 text-muted-foreground">
-        Six answers map you to one of the profiles below, with a primary path, an honest runner-up and a
-        realistic timeline band.
+        Six answers map you to one of the profiles below, with a primary path, an honest runner-up
+        and a realistic timeline band.
       </p>
       <DecisionQuiz />
 
@@ -565,4 +563,3 @@ function ActionPlanExtras() {
     </div>
   );
 }
-

@@ -37,11 +37,15 @@ export function ProjectLadder() {
 
             <dl className="mt-auto space-y-2.5 text-sm">
               <div>
-                <dt className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-primary">Stack</dt>
+                <dt className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-primary">
+                  Stack
+                </dt>
                 <dd className="text-secondary-foreground">{p.stack}</dd>
               </div>
               <div>
-                <dt className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-primary">Proves</dt>
+                <dt className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-primary">
+                  Proves
+                </dt>
                 <dd className="text-secondary-foreground">{p.proves}</dd>
               </div>
               <div>

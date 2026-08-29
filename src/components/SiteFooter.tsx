@@ -23,11 +23,13 @@ export function SiteFooter() {
               About LogicMojo
             </h2>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
-              LogicMojo — advanced AI &amp; ML training for working professionals, from classical ML to GenAI
-              and Agentic AI, with dedicated career transition support.
+              LogicMojo — advanced AI &amp; ML training for working professionals, from classical ML
+              to GenAI and Agentic AI, with dedicated career transition support.
             </p>
             <div className="mt-5">
-              <p className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-primary">Contact</p>
+              <p className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-primary">
+                Contact
+              </p>
               <p className="mt-2 text-sm text-secondary-foreground">
                 📧 [email placeholder] | 📞 [phone placeholder] | 📍 [address placeholder]
               </p>
@@ -35,7 +37,9 @@ export function SiteFooter() {
           </div>
 
           <nav aria-label="Quick links">
-            <p className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-primary">Quick Links</p>
+            <p className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-primary">
+              Quick Links
+            </p>
             <ul className="mt-3 space-y-2">
               {QUICK_LINKS.map((l) => (
                 <li key={l}>
@@ -51,7 +55,9 @@ export function SiteFooter() {
           </nav>
 
           <div>
-            <p className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-primary">Follow Us</p>
+            <p className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-primary">
+              Follow Us
+            </p>
             <ul className="mt-3 space-y-2">
               {SOCIALS.map((s) => (
                 <li key={s}>
@@ -70,10 +76,10 @@ export function SiteFooter() {
         <div className="hairline my-9" />
 
         <p className="max-w-4xl text-xs leading-relaxed text-muted-foreground">
-          All salary figures are the author's planning bands informed by self-reported aggregates and are not
-          published averages. Timelines are estimates from tracked transitions, not promises. Course fees,
-          durations, formats and affiliations are indicative — verify current details with each provider. No
-          course guarantees a job — including any mentioned here.
+          All salary figures are the author's planning bands informed by self-reported aggregates
+          and are not published averages. Timelines are estimates from tracked transitions, not
+          promises. Course fees, durations, formats and affiliations are indicative — verify current
+          details with each provider. No course guarantees a job — including any mentioned here.
         </p>
         <p className="mt-5 text-xs font-medium text-secondary-foreground">
           © 2026 LogicMojo. All rights reserved.

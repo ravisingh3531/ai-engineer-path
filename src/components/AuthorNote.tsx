@@ -47,7 +47,9 @@ export function AuthorNote({ id }: { id: string }) {
                 {row.label}
               </dt>
               <p className="mt-0.5 text-[0.68rem] font-medium text-muted-foreground">{row.hint}</p>
-              <dd className="mt-2 text-sm leading-relaxed text-muted-foreground">{note[row.key]}</dd>
+              <dd className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {note[row.key]}
+              </dd>
             </div>
           ))}
         </dl>

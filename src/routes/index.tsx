@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { Markdown } from "@/components/Markdown";
+import { AuthorNote } from "@/components/AuthorNote";
+import { TrustPillars } from "@/components/TrustPillars";
 import { Reveal } from "@/components/Reveal";
 import { PhaseStepper } from "@/components/PhaseStepper";
 import { ProjectLadder } from "@/components/ProjectLadder";
@@ -305,6 +307,8 @@ function Guide() {
               </article>
             </Reveal>
 
+            <TrustPillars />
+
             <Reveal>
               <AnswerBox />
             </Reveal>
@@ -573,6 +577,8 @@ function SectionBlock({ section, index }: { section: Section; index: number }) {
       ) : null}
 
       {section.afterExtra ? <div className="mt-10">{section.afterExtra}</div> : null}
+
+      <AuthorNote id={section.id} />
 
       {index === SECTIONS.length - 1 ? null : <div className="pt-4" />}
     </section>

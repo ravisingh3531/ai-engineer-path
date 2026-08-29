@@ -17,7 +17,7 @@ export function ReviewerCarousel() {
             <div key={r.role} className="w-full flex-none p-6 sm:p-8">
               <div className="flex items-start gap-4">
                 <div
-                  className="flex h-14 w-14 flex-none items-center justify-center rounded-2xl bg-[var(--gradient-primary)] font-[family-name:var(--font-display)] text-lg font-bold text-primary-foreground"
+                  className="flex h-14 w-14 flex-none items-center justify-center rounded-2xl grad-primary font-[family-name:var(--font-display)] text-lg font-bold text-primary-foreground"
                   aria-label="Reviewer photo placeholder"
                 >
                   {i + 1}

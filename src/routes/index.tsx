@@ -1,31 +1,101 @@
 import { createFileRoute } from "@tanstack/react-router";
+import type { ReactNode } from "react";
 import { Markdown } from "@/components/Markdown";
 import { Reveal } from "@/components/Reveal";
+import { PhaseStepper } from "@/components/PhaseStepper";
+import { ProjectLadder } from "@/components/ProjectLadder";
+import { EditorsPick } from "@/components/EditorsPick";
+import { DecisionQuiz } from "@/components/DecisionQuiz";
+import { ActionChecklist } from "@/components/ActionChecklist";
+import { FaqAccordion } from "@/components/FaqAccordion";
+import { AuthorTrust } from "@/components/AuthorTrust";
+import { SiteFooter } from "@/components/SiteFooter";
 import { intro, answer, s2, s3, s4, s5 } from "@/content/article";
+import {
+  s6,
+  s6tail,
+  s7,
+  s7b,
+  s8,
+  s8alts,
+  s9,
+  s10,
+  s11,
+  s12intro,
+  finalRecommendation,
+} from "@/content/article-2";
+import { FAQS } from "@/content/data";
 import heroArt from "@/assets/hero-transition.jpg";
+
+const TITLE = "How to Switch from Full Stack Developer to AI Engineer 2026";
+const DESCRIPTION =
+  "Can a full stack developer become an AI engineer? A 2026 roadmap: transferable skills, the gap, what to learn first, projects, courses and interview prep.";
+const CANONICAL = "/how-to-switch-from-full-stack-developer-to-ai-engineer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      {
-        title: "Full Stack Developer to AI Engineer in 2026 — Complete Roadmap",
-      },
-      {
-        name: "description",
-        content:
-          "A hiring-first 2026 guide for Indian full stack developers moving into AI engineering: feasibility, transferable skills, a sized gap map and the exact learning order.",
-      },
-      {
-        property: "og:title",
-        content: "Full Stack Developer to AI Engineer in 2026 — Complete Roadmap",
-      },
-      {
-        property: "og:description",
-        content:
-          "Role spectrum, transferable-skills map, a 16-row skill gap map and the right learning order — written for developers who already ship production software.",
-      },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "article" },
+      { property: "og:url", content: CANONICAL },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: CANONICAL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Article",
+              headline: TITLE,
+              description: DESCRIPTION,
+              author: { "@type": "Person", name: "LogicMojo Editorial" },
+              publisher: {
+                "@type": "Organization",
+                name: "LogicMojo",
+                description:
+                  "Advanced AI & ML training for working professionals, from classical ML to GenAI and Agentic AI.",
+              },
+              inLanguage: "en-IN",
+              dateModified: "2026-01-01",
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+                { "@type": "ListItem", position: 2, name: "Blog", item: "/blog" },
+                { "@type": "ListItem", position: 3, name: TITLE, item: CANONICAL },
+              ],
+            },
+            {
+              "@type": "FAQPage",
+              mainEntity: FAQS.map((f) => ({
+                "@type": "Question",
+                name: f.q,
+                acceptedAnswer: { "@type": "Answer", text: f.a },
+              })),
+            },
+            {
+              "@type": "ItemList",
+              name: "Six-phase full stack to AI engineer roadmap",
+              itemListElement: [
+                "Phase 0 — Reposition",
+                "Phase 1 — Python and your first LLM feature",
+                "Phase 2 — LLM mechanics, embeddings and RAG foundations",
+                "Phase 3 — Evaluation and advanced RAG",
+                "Phase 4 — Agents, MCP and fine-tuning",
+                "Phase 5 — Production credibility",
+                "Phase 6 — Evidence, positioning and applying",
+              ].map((name, i) => ({ "@type": "ListItem", position: i + 1, name })),
+            },
+          ],
+        }),
+      },
     ],
   }),
   component: Guide,
@@ -38,6 +108,9 @@ type Section = {
   kicker: string;
   title: string;
   body: string;
+  extra?: ReactNode;
+  after?: string;
+  afterExtra?: ReactNode;
 };
 
 /** Strips the leading markdown H2 so the section header can be rendered as design. */
@@ -76,11 +149,84 @@ const SECTIONS: Section[] = [
     title: "What Should You Learn First?",
     body: strip(s5),
   },
+  {
+    id: "roadmap",
+    num: "06",
+    badge: "🗺️",
+    kicker: "Six phases, not calendar weeks",
+    title: "The Full Stack → AI Engineer Roadmap (2026)",
+    body: strip(s6),
+    extra: <PhaseStepper />,
+    after: s6tail,
+  },
+  {
+    id: "projects",
+    num: "07",
+    badge: "🛠️",
+    kicker: "Evidence, not tutorials",
+    title: "Projects That Get Full Stack Developers Hired",
+    body: strip(s7),
+    extra: <ProjectLadder />,
+    after: s7b,
+  },
+  {
+    id: "courses",
+    num: "08",
+    badge: "🎓",
+    kicker: "Decision framework + seven programs",
+    title: "Do You Need a Course? And Which One Fits a Developer?",
+    body: strip(s8),
+    extra: <EditorsPick />,
+    after: s8alts,
+  },
+  {
+    id: "interviews",
+    num: "09",
+    badge: "🎤",
+    kicker: "Loops, question bank, defence drill",
+    title: "How to Prepare for AI Engineer Interviews",
+    body: strip(s9),
+  },
+  {
+    id: "career",
+    num: "10",
+    badge: "📈",
+    kicker: "Routes, titles, salary bands",
+    title: "Your AI Engineer Career Plan",
+    body: strip(s10),
+  },
+  {
+    id: "mistakes",
+    num: "11",
+    badge: "🚩",
+    kicker: "Twelve failure modes and their fixes",
+    title: "Mistakes That End Transitions",
+    body: strip(s11),
+  },
+  {
+    id: "action-plan",
+    num: "12",
+    badge: "✅",
+    kicker: "30 / 60 / 90 / 180 days",
+    title: "Your Final Action Plan",
+    body: strip(s12intro),
+    extra: <ActionPlanExtras />,
+  },
+  {
+    id: "faqs",
+    num: "13",
+    badge: "❓",
+    kicker: "Twenty honest answers",
+    title: "Frequently Asked Questions",
+    body: "",
+    extra: <FaqAccordion />,
+  },
 ];
 
 const TOC = [
   { id: "answer", label: "The Short Answer", num: "01" },
   ...SECTIONS.map((s) => ({ id: s.id, label: s.title, num: s.num })),
+  { id: "author", label: "Author, Reviewers & Trust", num: "14" },
 ];
 
 const STATS = [
@@ -89,6 +235,7 @@ const STATS = [
   { value: "40+", label: "Hiring managers and AI leads interviewed" },
   { value: "6–10", label: "Months to job-ready at 10–15 hrs/week (author's band)" },
 ];
+
 
 function Guide() {
   return (

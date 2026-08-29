@@ -52,7 +52,9 @@ A portfolio of framework quick-starts reads, to an experienced reviewer, exactly
 
 **Summary:** Nine projects in increasing difficulty, from an LLM feature inside an app you already own to a monitored, evaluated capstone — each one designed to answer a specific interview question.
 
-**1. LLM feature inside an existing app.** Ticket triage, invoice or receipt extraction, or auto-summarised support threads. *Full stack twist:* a fresher builds a script; you build it behind your existing auth, rate limits and error handling, with a fallback path when the model times out. *Evaluation:* 100 labelled items, accuracy plus schema-validity rate. *Trade-off to write up:* structured outputs versus free-text parsing, and what you did with malformed responses.
+`;
+
+export const s7b = `**1. LLM feature inside an existing app.** Ticket triage, invoice or receipt extraction, or auto-summarised support threads. *Full stack twist:* a fresher builds a script; you build it behind your existing auth, rate limits and error handling, with a fallback path when the model times out. *Evaluation:* 100 labelled items, accuracy plus schema-validity rate. *Trade-off to write up:* structured outputs versus free-text parsing, and what you did with malformed responses.
 
 **2. Streaming chat with tool calling, persistence and auth.** *Full stack twist:* real SSE or WebSocket streaming, conversation persistence with proper indexes, per-user quotas — the parts that break in production. *Evaluation:* tool-selection accuracy on 50 scripted turns. *Trade-off:* client-side versus server-side conversation state, and token cost of resending history.
 

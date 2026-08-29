@@ -27,14 +27,8 @@ import {
 import { FAQS } from "@/content/data";
 import { CourseReviews, CourseComparisonTable } from "@/components/CourseReviews";
 import { CourseFinderQuiz } from "@/components/CourseFinderQuiz";
-import {
-  recommendationMd,
-  methodologyMd,
-  chooseMd,
-  beyondMarketingMd,
-} from "@/content/courses";
+import { recommendationMd, methodologyMd, chooseMd, beyondMarketingMd } from "@/content/courses";
 import heroArt from "@/assets/hero-transition.jpg";
-
 
 const TITLE = "How to Switch from Full Stack Developer to AI Engineer 2026";
 const DESCRIPTION =
@@ -202,8 +196,8 @@ const SECTIONS: Section[] = [
             The Comparison Table
           </h3>
           <p className="mt-2 mb-4 text-muted-foreground">
-            Every score is the weighted editorial fit rating defined above — read the full evaluation
-            underneath before acting on any row.
+            Every score is the weighted editorial fit rating defined above — read the full
+            evaluation underneath before acting on any row.
           </p>
           <CourseComparisonTable />
         </div>
@@ -213,10 +207,10 @@ const SECTIONS: Section[] = [
             The Ten Reviews — Prerequisites to Placement
           </h3>
           <p className="mt-2 text-muted-foreground">
-            Each card opens into the same eleven-row evaluation: prerequisites, Python and ML foundations,
-            GenAI depth, real-world projects, deployment and MLOps, mentoring, interview preparation,
-            resume and LinkedIn support, hiring partners, placement mechanics and the alumni evidence you
-            can actually verify.
+            Each card opens into the same eleven-row evaluation: prerequisites, Python and ML
+            foundations, GenAI depth, real-world projects, deployment and MLOps, mentoring,
+            interview preparation, resume and LinkedIn support, hiring partners, placement mechanics
+            and the alumni evidence you can actually verify.
           </p>
           <CourseReviews />
         </div>
@@ -226,9 +220,9 @@ const SECTIONS: Section[] = [
             Course Finder Quiz — Eleven Questions, One Best Fit
           </h3>
           <p className="mt-2 mb-5 text-muted-foreground">
-            Answer as your busiest self, not your most optimistic one. The result opens in a pop-up with the
-            course name, the reasoning behind it, the curriculum, what its placement support actually means
-            and where to verify it.
+            Answer as your busiest self, not your most optimistic one. The result opens in a pop-up
+            with the course name, the reasoning behind it, the curriculum, what its placement
+            support actually means and where to verify it.
           </p>
           <CourseFinderQuiz />
         </div>
@@ -579,8 +573,6 @@ function SectionBlock({ section, index }: { section: Section; index: number }) {
       ) : null}
 
       {section.afterExtra ? <div className="mt-10">{section.afterExtra}</div> : null}
-
-
 
       {index === SECTIONS.length - 1 ? null : <div className="pt-4" />}
     </section>

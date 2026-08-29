@@ -578,6 +578,10 @@ function SectionBlock({ section, index }: { section: Section; index: number }) {
         </Reveal>
       ) : null}
 
+      {section.afterExtra ? <div className="mt-10">{section.afterExtra}</div> : null}
+
+
+
       {index === SECTIONS.length - 1 ? null : <div className="pt-4" />}
     </section>
   );

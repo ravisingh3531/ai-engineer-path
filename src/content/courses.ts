@@ -74,8 +74,10 @@ export const COURSES: Course[] = [
     mentoring: "Live instruction with mentor access and doubt-clearing sessions [verify current].",
     interviewPrep:
       "Structured interview preparation: DSA conditioning, ML and GenAI question banks, system design for AI systems, and mock interviews [verify current].",
-    resumeSupport: "Resume, LinkedIn and profile positioning support as part of career services [verify current].",
-    hiringPartners: "Hiring-partner network advertised [verify the current list and how referrals actually work].",
+    resumeSupport:
+      "Resume, LinkedIn and profile positioning support as part of career services [verify current].",
+    hiringPartners:
+      "Hiring-partner network advertised [verify the current list and how referrals actually work].",
     placement:
       "Placement-first positioning with structured job assistance. Treat 'assistance' as referrals plus interview readiness — no course can guarantee a job, and you should refuse any that says it can.",
     alumniEvidence:
@@ -84,7 +86,13 @@ export const COURSES: Course[] = [
       "A working full stack developer, roughly 2–8 years in, targeting AI Engineer, GenAI Engineer or AI Application Developer roles in India who wants structure, mentorship and interview conditioning rather than another video library.",
     notFor:
       "Readers who need an accredited university credential for an HR gate or visa, readers on a near-zero budget, and research aspirants targeting Applied Scientist roles.",
-    roles: ["AI Engineer", "GenAI Engineer", "LLM Engineer", "AI Application Developer", "ML Engineer"],
+    roles: [
+      "AI Engineer",
+      "GenAI Engineer",
+      "LLM Engineer",
+      "AI Application Developer",
+      "ML Engineer",
+    ],
     strengths: [
       "Assumes you can already code, so the curriculum starts where a developer actually is",
       "Covers the full arc: Python → ML → deep learning → NLP → LLMs → RAG → LangChain → fine-tuning → agents → MLOps → deployment",
@@ -104,25 +112,34 @@ export const COURSES: Course[] = [
     rank: 2,
     name: "Scaler — Data Science & ML / AI track",
     provider: "Scaler Academy",
-    tagline: "Placement machinery and interview conditioning, at a premium price and a long duration.",
+    tagline:
+      "Placement machinery and interview conditioning, at a premium price and a long duration.",
     score: 4.1,
     verdict: "Strong",
     format: "Live evening batches, cohort based",
     duration: "Roughly 9–15 months [verify current]",
     price: "Premium tier [verify current pricing]",
-    prerequisites: "Working developers welcome; the DSA and system design layer assumes engineering maturity.",
+    prerequisites:
+      "Working developers welcome; the DSA and system design layer assumes engineering maturity.",
     pythonMl: "Strong Python, statistics, classical ML and deep learning fundamentals.",
-    genAiDepth: "GenAI, RAG, agents and MCP coverage varies by track and cohort [verify current syllabus].",
-    projects: "Structured, mentor-guided projects; individually designed depth varies [verify current].",
-    deployment: "Deployment and MLOps modules present; LLM-specific observability is typically thinner.",
+    genAiDepth:
+      "GenAI, RAG, agents and MCP coverage varies by track and cohort [verify current syllabus].",
+    projects:
+      "Structured, mentor-guided projects; individually designed depth varies [verify current].",
+    deployment:
+      "Deployment and MLOps modules present; LLM-specific observability is typically thinner.",
     mentoring: "Mentor access and live instruction are a genuine strength.",
-    interviewPrep: "Best-in-class interview conditioning for product-company loops — DSA plus system design.",
+    interviewPrep:
+      "Best-in-class interview conditioning for product-company loops — DSA plus system design.",
     resumeSupport: "Resume and profile support as part of career services.",
     hiringPartners: "Large recruiter network and alumni base.",
     placement: "Substantial placement infrastructure; still assistance, not a guarantee.",
-    alumniEvidence: "Public alumni profiles are plentiful — sample them on LinkedIn rather than trusting the landing page.",
-    bestFor: "A developer targeting product-company loops where DSA and system design still gate the interview.",
-    notFor: "Someone who only needs the AI layer and resents paying for 9–15 months of ground already covered.",
+    alumniEvidence:
+      "Public alumni profiles are plentiful — sample them on LinkedIn rather than trusting the landing page.",
+    bestFor:
+      "A developer targeting product-company loops where DSA and system design still gate the interview.",
+    notFor:
+      "Someone who only needs the AI layer and resents paying for 9–15 months of ground already covered.",
     roles: ["AI Engineer", "ML Engineer", "AI Application Developer"],
     strengths: [
       "Placement infrastructure and recruiter relationships",
@@ -139,14 +156,16 @@ export const COURSES: Course[] = [
     rank: 3,
     name: "DeepLearning.AI specialisations + short courses",
     provider: "DeepLearning.AI (Coursera / short-course platform)",
-    tagline: "The best pure content on the list, and the least career support. Free to audit or low cost.",
+    tagline:
+      "The best pure content on the list, and the least career support. Free to audit or low cost.",
     score: 4.0,
     verdict: "Strong",
     format: "Self-paced video plus notebooks",
     duration: "Self-directed; 2–5 months at 10 hrs/week",
     price: "Free to audit; low subscription for certificates [verify current pricing]",
     prerequisites: "Comfort with Python. No hand-holding on environments.",
-    pythonMl: "Machine Learning Specialisation and Deep Learning Specialisation remain the reference explanations.",
+    pythonMl:
+      "Machine Learning Specialisation and Deep Learning Specialisation remain the reference explanations.",
     genAiDepth:
       "The short-course library covers RAG, agents, evaluation, function calling and fine-tuning, refreshed frequently — often the fastest route to a current GenAI concept.",
     projects: "Notebook exercises, not portfolio projects. You must build your own.",
@@ -156,12 +175,18 @@ export const COURSES: Course[] = [
     resumeSupport: "None.",
     hiringPartners: "None.",
     placement: "None, and it does not pretend otherwise — which is a point in its favour.",
-    alumniEvidence: "Not applicable; the certificate carries little weight with Indian recruiters on its own.",
-    bestFor: "A self-disciplined developer who wants the concepts right and will build and apply on their own.",
+    alumniEvidence:
+      "Not applicable; the certificate carries little weight with Indian recruiters on its own.",
+    bestFor:
+      "A self-disciplined developer who wants the concepts right and will build and apply on their own.",
     notFor: "Anyone who needs deadlines, accountability, project review or interview help.",
     roles: ["AI Engineer", "GenAI Engineer", "LLM Engineer"],
     strengths: ["Best-in-class explanations", "Very low cost", "GenAI library updated quickly"],
-    limitations: ["No accountability", "No projects that read as proof", "No career support of any kind"],
+    limitations: [
+      "No accountability",
+      "No projects that read as proof",
+      "No career support of any kind",
+    ],
   },
   {
     rank: 4,
@@ -173,8 +198,10 @@ export const COURSES: Course[] = [
     format: "Free video course plus notebooks and a book",
     duration: "8–12 weeks part time",
     price: "Free",
-    prerequisites: "Roughly a year of coding. Written for programmers, not for maths-first learners.",
-    pythonMl: "Deep learning first, theory later — the fastest route from 'I write code' to 'I train models'.",
+    prerequisites:
+      "Roughly a year of coding. Written for programmers, not for maths-first learners.",
+    pythonMl:
+      "Deep learning first, theory later — the fastest route from 'I write code' to 'I train models'.",
     genAiDepth: "Some LLM material, but this is not a GenAI-production course.",
     projects: "You build your own; the community shows what good looks like.",
     deployment: "Light deployment coverage; no production MLOps.",
@@ -200,9 +227,11 @@ export const COURSES: Course[] = [
     format: "Self-paced video with live sessions",
     duration: "Roughly 12 months [verify current]",
     price: "Premium tier [verify current pricing]",
-    prerequisites: "Open to non-developers, which is precisely why it repeats a lot of what you know.",
+    prerequisites:
+      "Open to non-developers, which is precisely why it repeats a lot of what you know.",
     pythonMl: "Broad ML, statistics and deep learning coverage.",
-    genAiDepth: "GenAI modules added and evolving [verify current syllabus]; agents, MCP and production evaluation are usually thin.",
+    genAiDepth:
+      "GenAI modules added and evolving [verify current syllabus]; agents, MCP and production evaluation are usually thin.",
     projects: "Case-study led and assignment shaped rather than learner designed.",
     deployment: "Present but academic in flavour.",
     mentoring: "Mentor sessions vary by program.",
@@ -211,7 +240,8 @@ export const COURSES: Course[] = [
     hiringPartners: "Recruiter tie-ups advertised [verify].",
     placement: "Career support advertised — verify what is guaranteed in writing versus marketed.",
     alumniEvidence: "Ask for alumni you can contact from your own city and track.",
-    bestFor: "Someone whose employer or visa path needs a recognised university-affiliated credential.",
+    bestFor:
+      "Someone whose employer or visa path needs a recognised university-affiliated credential.",
     notFor: "An experienced developer who only needs the AI layer quickly.",
     roles: ["ML Engineer", "AI Application Developer"],
     strengths: ["Recognised affiliation", "Formal credential", "Structured assessment"],
@@ -229,7 +259,8 @@ export const COURSES: Course[] = [
     price: "Mid to premium [verify current pricing]",
     prerequisites: "Mixed cohorts, from analysts to developers.",
     pythonMl: "Solid classical ML and deep learning coverage.",
-    genAiDepth: "GenAI modules exist and are expanding [verify current syllabus]; production RAG and agents are usually shallow.",
+    genAiDepth:
+      "GenAI modules exist and are expanding [verify current syllabus]; production RAG and agents are usually shallow.",
     projects: "Guided projects; portfolio differentiation is limited.",
     deployment: "Basic deployment; MLOps depth varies.",
     mentoring: "Mentor sessions are the main live component.",
@@ -238,7 +269,8 @@ export const COURSES: Course[] = [
     hiringPartners: "Advertised; verify.",
     placement: "Career support, not a guarantee.",
     alumniEvidence: "Mixed. Sample LinkedIn rather than testimonials.",
-    bestFor: "A learner who wants a recognised program name and mentor contact at a moderate price.",
+    bestFor:
+      "A learner who wants a recognised program name and mentor contact at a moderate price.",
     notFor: "A developer whose entire gap is GenAI production engineering.",
     roles: ["ML Engineer", "AI Application Developer"],
     strengths: ["Recognised brand", "Mentor sessions", "Broad catalogue"],
@@ -255,8 +287,10 @@ export const COURSES: Course[] = [
     duration: "4–8 weeks part time",
     price: "Free",
     prerequisites: "Python and comfort with APIs.",
-    pythonMl: "Assumes fundamentals; teaches transformers, tokenisers, datasets and fine-tuning by doing.",
-    genAiDepth: "Excellent and current on transformers, fine-tuning and agents. Vendor-flavoured toward the HF ecosystem.",
+    pythonMl:
+      "Assumes fundamentals; teaches transformers, tokenisers, datasets and fine-tuning by doing.",
+    genAiDepth:
+      "Excellent and current on transformers, fine-tuning and agents. Vendor-flavoured toward the HF ecosystem.",
     projects: "Hands-on notebooks and Spaces; you can turn them into portfolio pieces with effort.",
     deployment: "Inference endpoints and Spaces; not general cloud MLOps.",
     mentoring: "Community only.",
@@ -285,7 +319,8 @@ export const COURSES: Course[] = [
     pythonMl: "Almost none — these assume ML context rather than teach it.",
     genAiDepth: "Deep on one framework or one cloud's AI layer; blind to everything else.",
     projects: "Small labs.",
-    deployment: "Cloud provider tracks are the exception — genuinely good on serving and integration.",
+    deployment:
+      "Cloud provider tracks are the exception — genuinely good on serving and integration.",
     mentoring: "None.",
     interviewPrep: "None, though cloud certs do get past some recruiter filters.",
     resumeSupport: "None.",
@@ -310,7 +345,8 @@ export const COURSES: Course[] = [
     price: "Premium to very premium [verify current pricing]",
     prerequisites: "Working professionals; often a degree requirement.",
     pythonMl: "Rigorous fundamentals and mathematics.",
-    genAiDepth: "Usually behind the field — GenAI modules are bolted onto an ML syllabus [verify current syllabus].",
+    genAiDepth:
+      "Usually behind the field — GenAI modules are bolted onto an ML syllabus [verify current syllabus].",
     projects: "Academic capstones.",
     deployment: "Light. MLOps is rarely the focus.",
     mentoring: "Faculty office hours.",
@@ -319,11 +355,20 @@ export const COURSES: Course[] = [
     hiringPartners: "Partner-run career services.",
     placement: "Assistance via the ed-tech partner, not the institute.",
     alumniEvidence: "Institute brand is verifiable; outcome claims usually are not.",
-    bestFor: "Someone optimising for internal promotion, brand signalling or a future MS application.",
+    bestFor:
+      "Someone optimising for internal promotion, brand signalling or a future MS application.",
     notFor: "A developer who needs shippable GenAI systems in six months.",
     roles: ["ML Engineer"],
-    strengths: ["Brand recognition", "Rigorous fundamentals", "Peer network of senior professionals"],
-    limitations: ["Dated GenAI content", "Very high price", "Academic projects that do not read as production proof"],
+    strengths: [
+      "Brand recognition",
+      "Rigorous fundamentals",
+      "Peer network of senior professionals",
+    ],
+    limitations: [
+      "Dated GenAI content",
+      "Very high price",
+      "Academic projects that do not read as production proof",
+    ],
   },
   {
     rank: 10,
@@ -346,11 +391,16 @@ export const COURSES: Course[] = [
     hiringPartners: "None.",
     placement: "None.",
     alumniEvidence: "Ratings, not outcomes.",
-    bestFor: "Closing one narrow gap — say, pgvector or FastAPI streaming — for the price of lunch.",
+    bestFor:
+      "Closing one narrow gap — say, pgvector or FastAPI streaming — for the price of lunch.",
     notFor: "Being the backbone of a career transition.",
     roles: ["AI Application Developer"],
     strengths: ["Very cheap", "Sometimes excellent on one narrow topic", "Lifetime access"],
-    limitations: ["No accountability", "Commodity portfolio", "Marketing language far ahead of content"],
+    limitations: [
+      "No accountability",
+      "Commodity portfolio",
+      "Marketing language far ahead of content",
+    ],
   },
 ];
 

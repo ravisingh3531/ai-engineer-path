@@ -85,7 +85,9 @@ function CourseCard({ course }: { course: Course }) {
           </div>
         </div>
 
-        <p className="mt-4 text-[0.95rem] leading-relaxed text-secondary-foreground">{course.tagline}</p>
+        <p className="mt-4 text-[0.95rem] leading-relaxed text-secondary-foreground">
+          {course.tagline}
+        </p>
 
         <dl className="mt-5 grid gap-3 sm:grid-cols-3">
           {[
@@ -94,7 +96,9 @@ function CourseCard({ course }: { course: Course }) {
             { t: "Price", v: course.price },
           ].map((f) => (
             <div key={f.t} className="rounded-xl border border-border bg-background/60 p-3">
-              <dt className="text-[0.6rem] font-bold uppercase tracking-[0.14em] text-primary">{f.t}</dt>
+              <dt className="text-[0.6rem] font-bold uppercase tracking-[0.14em] text-primary">
+                {f.t}
+              </dt>
               <dd className="mt-1 text-xs leading-relaxed text-muted-foreground">{f.v}</dd>
             </div>
           ))}
@@ -145,7 +149,9 @@ function CourseCard({ course }: { course: Course }) {
 
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-xl border border-border bg-background/60 p-4">
-                <p className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-primary">Strengths</p>
+                <p className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-primary">
+                  Strengths
+                </p>
                 <ul className="mt-2 space-y-1.5 text-xs leading-relaxed text-secondary-foreground">
                   {course.strengths.map((s) => (
                     <li key={s} className="flex gap-2">
@@ -193,7 +199,9 @@ function CourseCard({ course }: { course: Course }) {
                 className="group inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-5 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform duration-300 hover:-translate-y-0.5"
               >
                 Verify the published outcomes yourself
-                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
               </a>
             ) : null}
           </div>
@@ -249,11 +257,11 @@ export function CourseReviews() {
         </Reveal>
       ))}
       <p className="text-xs leading-relaxed text-muted-foreground">
-        Scores are the author's editorial fit ratings against the gap map in Section 4, computed with the
-        weights published above. They are not measured outcomes, and no placement, salary or alumni figure
-        appears anywhere in this comparison. Prices, durations and syllabus contents change between cohorts —
-        every such claim is marked <em>[verify current]</em> and should be confirmed with the provider in
-        writing before you pay.
+        Scores are the author's editorial fit ratings against the gap map in Section 4, computed
+        with the weights published above. They are not measured outcomes, and no placement, salary
+        or alumni figure appears anywhere in this comparison. Prices, durations and syllabus
+        contents change between cohorts — every such claim is marked <em>[verify current]</em> and
+        should be confirmed with the provider in writing before you pay.
       </p>
     </div>
   );

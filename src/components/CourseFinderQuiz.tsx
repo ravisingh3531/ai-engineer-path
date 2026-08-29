@@ -214,18 +214,28 @@ function ResultModal({
 
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             <div className="rounded-xl border border-border bg-background/60 p-4">
-              <p className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-primary">Curriculum</p>
+              <p className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-primary">
+                Curriculum
+              </p>
               <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{best.pythonMl}</p>
-              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{best.genAiDepth}</p>
-              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{best.deployment}</p>
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                {best.genAiDepth}
+              </p>
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                {best.deployment}
+              </p>
             </div>
             <div className="rounded-xl border border-border bg-background/60 p-4">
               <p className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-primary">
                 Placement &amp; support
               </p>
               <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{best.placement}</p>
-              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{best.interviewPrep}</p>
-              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{best.alumniEvidence}</p>
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                {best.interviewPrep}
+              </p>
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                {best.alumniEvidence}
+              </p>
             </div>
           </div>
 
@@ -243,7 +253,9 @@ function ResultModal({
                 className="group inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-5 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform duration-300 hover:-translate-y-0.5"
               >
                 Check the curriculum and published outcomes
-                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
               </a>
             ) : (
               <a
@@ -264,9 +276,10 @@ function ResultModal({
           </div>
 
           <p className="mt-5 text-[0.7rem] leading-relaxed text-muted-foreground">
-            This recommendation is an editorial fit calculation from your eleven answers and the published
-            weights above. It is not a placement claim, an outcome prediction or a paid placement. Verify the
-            current syllabus, batch schedule, price and refund policy in writing before you enrol.
+            This recommendation is an editorial fit calculation from your eleven answers and the
+            published weights above. It is not a placement claim, an outcome prediction or a paid
+            placement. Verify the current syllabus, batch schedule, price and refund policy in
+            writing before you enrol.
           </p>
         </div>
       </div>

@@ -12,7 +12,9 @@ export function FaqAccordion() {
           <div
             key={f.q}
             className={`overflow-hidden rounded-2xl border transition-colors duration-300 ${
-              isOpen ? "border-primary/35 bg-card shadow-[var(--shadow-card)]" : "border-border bg-card/70"
+              isOpen
+                ? "border-primary/35 bg-card shadow-[var(--shadow-card)]"
+                : "border-border bg-card/70"
             }`}
           >
             <button

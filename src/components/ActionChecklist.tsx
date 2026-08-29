@@ -42,7 +42,9 @@ export function ActionChecklist() {
                         />
                         <span
                           className={
-                            isDone ? "text-muted-foreground line-through" : "text-secondary-foreground"
+                            isDone
+                              ? "text-muted-foreground line-through"
+                              : "text-secondary-foreground"
                           }
                         >
                           {item}

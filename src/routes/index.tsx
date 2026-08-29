@@ -1,31 +1,101 @@
 import { createFileRoute } from "@tanstack/react-router";
+import type { ReactNode } from "react";
 import { Markdown } from "@/components/Markdown";
 import { Reveal } from "@/components/Reveal";
+import { PhaseStepper } from "@/components/PhaseStepper";
+import { ProjectLadder } from "@/components/ProjectLadder";
+import { EditorsPick } from "@/components/EditorsPick";
+import { DecisionQuiz } from "@/components/DecisionQuiz";
+import { ActionChecklist } from "@/components/ActionChecklist";
+import { FaqAccordion } from "@/components/FaqAccordion";
+import { AuthorTrust } from "@/components/AuthorTrust";
+import { SiteFooter } from "@/components/SiteFooter";
 import { intro, answer, s2, s3, s4, s5 } from "@/content/article";
+import {
+  s6,
+  s6tail,
+  s7,
+  s7b,
+  s8,
+  s8alts,
+  s9,
+  s10,
+  s11,
+  s12intro,
+  finalRecommendation,
+} from "@/content/article-2";
+import { FAQS } from "@/content/data";
 import heroArt from "@/assets/hero-transition.jpg";
+
+const TITLE = "How to Switch from Full Stack Developer to AI Engineer 2026";
+const DESCRIPTION =
+  "Can a full stack developer become an AI engineer? A 2026 roadmap: transferable skills, the gap, what to learn first, projects, courses and interview prep.";
+const CANONICAL = "/how-to-switch-from-full-stack-developer-to-ai-engineer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      {
-        title: "Full Stack Developer to AI Engineer in 2026 — Complete Roadmap",
-      },
-      {
-        name: "description",
-        content:
-          "A hiring-first 2026 guide for Indian full stack developers moving into AI engineering: feasibility, transferable skills, a sized gap map and the exact learning order.",
-      },
-      {
-        property: "og:title",
-        content: "Full Stack Developer to AI Engineer in 2026 — Complete Roadmap",
-      },
-      {
-        property: "og:description",
-        content:
-          "Role spectrum, transferable-skills map, a 16-row skill gap map and the right learning order — written for developers who already ship production software.",
-      },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "article" },
+      { property: "og:url", content: CANONICAL },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: CANONICAL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Article",
+              headline: TITLE,
+              description: DESCRIPTION,
+              author: { "@type": "Person", name: "LogicMojo Editorial" },
+              publisher: {
+                "@type": "Organization",
+                name: "LogicMojo",
+                description:
+                  "Advanced AI & ML training for working professionals, from classical ML to GenAI and Agentic AI.",
+              },
+              inLanguage: "en-IN",
+              dateModified: "2026-01-01",
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "/" },
+                { "@type": "ListItem", position: 2, name: "Blog", item: "/blog" },
+                { "@type": "ListItem", position: 3, name: TITLE, item: CANONICAL },
+              ],
+            },
+            {
+              "@type": "FAQPage",
+              mainEntity: FAQS.map((f) => ({
+                "@type": "Question",
+                name: f.q,
+                acceptedAnswer: { "@type": "Answer", text: f.a },
+              })),
+            },
+            {
+              "@type": "ItemList",
+              name: "Six-phase full stack to AI engineer roadmap",
+              itemListElement: [
+                "Phase 0 — Reposition",
+                "Phase 1 — Python and your first LLM feature",
+                "Phase 2 — LLM mechanics, embeddings and RAG foundations",
+                "Phase 3 — Evaluation and advanced RAG",
+                "Phase 4 — Agents, MCP and fine-tuning",
+                "Phase 5 — Production credibility",
+                "Phase 6 — Evidence, positioning and applying",
+              ].map((name, i) => ({ "@type": "ListItem", position: i + 1, name })),
+            },
+          ],
+        }),
+      },
     ],
   }),
   component: Guide,
@@ -38,6 +108,9 @@ type Section = {
   kicker: string;
   title: string;
   body: string;
+  extra?: ReactNode;
+  after?: string;
+  afterExtra?: ReactNode;
 };
 
 /** Strips the leading markdown H2 so the section header can be rendered as design. */
@@ -76,11 +149,84 @@ const SECTIONS: Section[] = [
     title: "What Should You Learn First?",
     body: strip(s5),
   },
+  {
+    id: "roadmap",
+    num: "06",
+    badge: "🗺️",
+    kicker: "Six phases, not calendar weeks",
+    title: "The Full Stack → AI Engineer Roadmap (2026)",
+    body: strip(s6),
+    extra: <PhaseStepper />,
+    after: s6tail,
+  },
+  {
+    id: "projects",
+    num: "07",
+    badge: "🛠️",
+    kicker: "Evidence, not tutorials",
+    title: "Projects That Get Full Stack Developers Hired",
+    body: strip(s7),
+    extra: <ProjectLadder />,
+    after: s7b,
+  },
+  {
+    id: "courses",
+    num: "08",
+    badge: "🎓",
+    kicker: "Decision framework + seven programs",
+    title: "Do You Need a Course? And Which One Fits a Developer?",
+    body: strip(s8),
+    extra: <EditorsPick />,
+    after: s8alts,
+  },
+  {
+    id: "interviews",
+    num: "09",
+    badge: "🎤",
+    kicker: "Loops, question bank, defence drill",
+    title: "How to Prepare for AI Engineer Interviews",
+    body: strip(s9),
+  },
+  {
+    id: "career",
+    num: "10",
+    badge: "📈",
+    kicker: "Routes, titles, salary bands",
+    title: "Your AI Engineer Career Plan",
+    body: strip(s10),
+  },
+  {
+    id: "mistakes",
+    num: "11",
+    badge: "🚩",
+    kicker: "Twelve failure modes and their fixes",
+    title: "Mistakes That End Transitions",
+    body: strip(s11),
+  },
+  {
+    id: "action-plan",
+    num: "12",
+    badge: "✅",
+    kicker: "30 / 60 / 90 / 180 days",
+    title: "Your Final Action Plan",
+    body: strip(s12intro),
+    extra: <ActionPlanExtras />,
+  },
+  {
+    id: "faqs",
+    num: "13",
+    badge: "❓",
+    kicker: "Twenty honest answers",
+    title: "Frequently Asked Questions",
+    body: "",
+    extra: <FaqAccordion />,
+  },
 ];
 
 const TOC = [
   { id: "answer", label: "The Short Answer", num: "01" },
   ...SECTIONS.map((s) => ({ id: s.id, label: s.title, num: s.num })),
+  { id: "author", label: "Author, Reviewers & Trust", num: "14" },
 ];
 
 const STATS = [
@@ -115,14 +261,12 @@ function Guide() {
               <SectionBlock key={section.id} section={section} index={i} />
             ))}
 
-            <Reveal>
-              <Continuation />
-            </Reveal>
+            <AuthorTrust />
           </div>
         </div>
       </main>
 
-      <Footer />
+      <SiteFooter />
     </div>
   );
 }
@@ -210,9 +354,10 @@ function Hero() {
 
           <Reveal delay={260}>
             <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-xs font-medium text-muted-foreground">
-              <span>Sections 1–5 of 12</span>
+              <span>Complete guide · 14 sections</span>
               <span className="hairline hidden w-px sm:block" />
-              <span>~40 min read</span>
+              <span>~75 min read</span>
+
               <span>Updated 2026</span>
             </div>
           </Reveal>
@@ -277,14 +422,32 @@ function TableOfContents() {
           ))}
         </ol>
 
-        <div className="mt-6 rounded-2xl border border-border bg-card p-4 shadow-[var(--shadow-soft)]">
+        <div className="mt-6 rounded-2xl border border-primary/25 bg-card p-4 shadow-[var(--shadow-soft)]">
           <p className="text-[0.68rem] font-bold uppercase tracking-[0.14em] text-primary">
-            Pending
+            Jump to the tools
           </p>
-          <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-            Sections 6–12 — roadmap, projects, course comparison, interviews, career plan,
-            mistakes and the final action plan.
-          </p>
+          <ul className="mt-2 space-y-1.5 text-xs font-medium text-secondary-foreground">
+            <li>
+              <a className="hover:text-primary" href="#roadmap">
+                Six-phase roadmap stepper
+              </a>
+            </li>
+            <li>
+              <a className="hover:text-primary" href="#courses">
+                Course comparison &amp; editor's pick
+              </a>
+            </li>
+            <li>
+              <a className="hover:text-primary" href="#action-plan">
+                Decision tool &amp; 30/60/90/180 checklist
+              </a>
+            </li>
+            <li>
+              <a className="hover:text-primary" href="#faqs">
+                20 FAQs
+              </a>
+            </li>
+          </ul>
         </div>
       </nav>
     </aside>
@@ -339,69 +502,64 @@ function SectionBlock({ section, index }: { section: Section; index: number }) {
         </div>
       </Reveal>
 
-      <Reveal delay={80}>
-        <div className="mt-8">
-          <Markdown source={section.body} />
-        </div>
-      </Reveal>
+      {section.body ? (
+        <Reveal delay={80}>
+          <div className="mt-8">
+            <Markdown source={section.body} />
+          </div>
+        </Reveal>
+      ) : null}
+
+      {section.extra ? <div className="mt-2">{section.extra}</div> : null}
+
+      {section.after ? (
+        <Reveal>
+          <div className="mt-10">
+            <Markdown source={section.after} />
+          </div>
+        </Reveal>
+      ) : null}
 
       {index === SECTIONS.length - 1 ? null : <div className="pt-4" />}
     </section>
   );
 }
 
-/* ---------------- continuation ---------------- */
+/* ---------------- action plan extras ---------------- */
 
-const PENDING = [
-  { n: "06", t: "Learning Roadmap — Six Phases" },
-  { n: "07", t: "Portfolio Projects That Read as Proof" },
-  { n: "08", t: "Do You Need a Course? Six Alternatives Compared" },
-  { n: "09", t: "AI Engineer Interview Preparation" },
-  { n: "10", t: "Career Plan — Titles, Companies, Salary" },
-  { n: "11", t: "Common Mistakes That End Transitions" },
-  { n: "12", t: "Final Action Plan" },
-];
-
-function Continuation() {
+function ActionPlanExtras() {
   return (
-    <section className="mt-24">
-      <div className="hairline mb-10" />
-      <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold tracking-[-0.03em] text-foreground">
-        Still to come
-      </h2>
+    <div className="mt-4">
+      <h3 className="font-[family-name:var(--font-display)] text-xl font-bold tracking-[-0.02em] text-foreground">
+        The 30 / 60 / 90 / 180-Day Checklist
+      </h3>
       <p className="mt-2 text-muted-foreground">
-        The remaining seven sections of the guide.
+        Tick items as you go — the state is yours for this session. Each block ends in a milestone
+        that is either true or not true.
       </p>
-      <div className="mt-7 grid gap-3 sm:grid-cols-2">
-        {PENDING.map((p, i) => (
-          <Reveal key={p.n} delay={i * 50}>
-            <div className="surface-card flex items-center gap-4 p-4">
-              <span className="flex h-9 w-9 flex-none items-center justify-center rounded-xl bg-accent font-[family-name:var(--font-display)] text-xs font-bold tabular-nums text-accent-foreground">
-                {p.n}
-              </span>
-              <span className="text-sm font-medium leading-snug text-secondary-foreground">
-                {p.t}
-              </span>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-    </section>
-  );
-}
+      <ActionChecklist />
 
-/* ---------------- footer ---------------- */
+      <h3 className="mt-16 font-[family-name:var(--font-display)] text-xl font-bold tracking-[-0.02em] text-foreground">
+        Interactive Decision Tool — Answer These Questions
+      </h3>
+      <p className="mt-2 text-muted-foreground">
+        Six answers map you to one of the profiles below, with a primary path, an honest runner-up
+        and a realistic timeline band.
+      </p>
+      <DecisionQuiz />
 
-function Footer() {
-  return (
-    <footer className="relative border-t border-border bg-card/70 backdrop-blur-sm">
-      <div className="mx-auto w-full max-w-[78rem] px-5 py-10 sm:px-8">
-        <p className="max-w-3xl text-xs leading-relaxed text-muted-foreground">
-          All salary figures are the author's planning bands informed by self-reported
-          aggregates and are not published averages. Timelines are estimates from tracked
-          transitions, not promises. No course guarantees a job — including any mentioned here.
-        </p>
-      </div>
-    </footer>
+      <h3 className="mt-16 font-[family-name:var(--font-display)] text-xl font-bold tracking-[-0.02em] text-foreground">
+        The Final Recommendation
+      </h3>
+      <Markdown source={finalRecommendation} className="mt-4" />
+
+      <a
+        href="#logicmojo-contact"
+        className="group mt-7 inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-5 py-3.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform duration-300 hover:-translate-y-0.5"
+      >
+        See the LogicMojo AI &amp; ML Course curriculum and upcoming batches
+        <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+      </a>
+    </div>
   );
 }

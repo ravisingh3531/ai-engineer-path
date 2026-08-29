@@ -45,8 +45,8 @@ export function EditorsPick() {
           LogicMojo AI &amp; ML Course: Why It Fits This Transition
         </h3>
         <p className="mt-2 text-sm text-muted-foreground">
-          Argued under the seven criteria above, with limitations disclosed in full. LogicMojo publishes this
-          page — see the author disclosure at the end.
+          Argued under the seven criteria above, with limitations disclosed in full. LogicMojo
+          publishes this page — see the author disclosure at the end.
         </p>
 
         <Markdown source={CASE} className="mt-6" />
@@ -55,35 +55,38 @@ export function EditorsPick() {
           Curriculum against the 16-area gap map
         </h4>
         <p className="mt-1.5 text-sm text-muted-foreground">
-          “Yes” and “Partial” reflect the published curriculum's stated progression; anything unverifiable is
-          marked for you to check against the current syllabus rather than asserted here.
+          “Yes” and “Partial” reflect the published curriculum's stated progression; anything
+          unverifiable is marked for you to check against the current syllabus rather than asserted
+          here.
         </p>
 
-        <div className="table-shell mt-4">
-          <table>
-            <thead>
-              <tr>
-                <th>Gap area</th>
-                <th>Covered in LogicMojo AI &amp; ML Course</th>
-                <th>Roadmap phase</th>
-              </tr>
-            </thead>
-            <tbody>
-              {GAP_COVERAGE.map((row) => (
-                <tr key={row.area}>
-                  <td>{row.area}</td>
-                  <td>
-                    <span
-                      className={`inline-block rounded-full px-2.5 py-1 text-[0.68rem] font-bold ${TONE[row.covered]}`}
-                    >
-                      {row.covered}
-                    </span>
-                  </td>
-                  <td className="whitespace-nowrap">{row.phase}</td>
+        <div className="prose-article mt-4">
+          <div className="table-shell">
+            <table>
+              <thead>
+                <tr>
+                  <th>Gap area</th>
+                  <th>Covered in LogicMojo AI &amp; ML Course</th>
+                  <th>Roadmap phase</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {GAP_COVERAGE.map((row) => (
+                  <tr key={row.area}>
+                    <td>{row.area}</td>
+                    <td>
+                      <span
+                        className={`inline-block rounded-full px-2.5 py-1 text-[0.68rem] font-bold ${TONE[row.covered]}`}
+                      >
+                        {row.covered}
+                      </span>
+                    </td>
+                    <td className="whitespace-nowrap">{row.phase}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <div className="mt-10 rounded-2xl border border-border bg-secondary/60 p-5">
@@ -98,8 +101,8 @@ export function EditorsPick() {
                 Honest limitations — eight of them
               </span>
               <span className="mt-1 block text-xs text-muted-foreground">
-                Read these before the verdict. If they disqualify the program for you, that is the section
-                working as intended.
+                Read these before the verdict. If they disqualify the program for you, that is the
+                section working as intended.
               </span>
             </span>
             <span
@@ -132,8 +135,8 @@ export function EditorsPick() {
           <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
         </a>
         <p className="mt-3 text-xs text-muted-foreground">
-          [internal link: LogicMojo AI &amp; ML Course] · [internal link: Curriculum] · [internal link: Batch
-          Details]
+          [internal link: LogicMojo AI &amp; ML Course] · [internal link: Curriculum] · [internal
+          link: Batch Details]
         </p>
       </div>
     </div>

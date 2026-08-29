@@ -59,7 +59,8 @@ export function EditorsPick() {
           marked for you to check against the current syllabus rather than asserted here.
         </p>
 
-        <div className="table-shell mt-4">
+        <div className="prose-article mt-4">
+          <div className="table-shell">
           <table>
             <thead>
               <tr>
@@ -84,6 +85,7 @@ export function EditorsPick() {
               ))}
             </tbody>
           </table>
+          </div>
         </div>
 
         <div className="mt-10 rounded-2xl border border-border bg-secondary/60 p-5">

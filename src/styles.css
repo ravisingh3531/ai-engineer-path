@@ -553,3 +553,9 @@
   margin: 0;
 }
 
+
+.prose-article table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}

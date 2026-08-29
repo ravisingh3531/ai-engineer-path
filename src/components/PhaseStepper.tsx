@@ -16,7 +16,7 @@ export function PhaseStepper() {
             aria-expanded={open === i}
             className={`group flex min-w-[9.5rem] flex-none flex-col items-start gap-1 rounded-2xl border px-4 py-3 text-left transition-all duration-300 ${
               open === i
-                ? "border-primary/40 bg-[var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-glow)]"
+                ? "border-primary/40 grad-primary text-primary-foreground shadow-[var(--shadow-glow)]"
                 : "border-border bg-card text-secondary-foreground shadow-[var(--shadow-soft)] hover:border-primary/40"
             }`}
           >

@@ -3,7 +3,7 @@ import { COURSES, type Course } from "@/content/courses";
 import { Reveal } from "@/components/Reveal";
 
 const verdictTone: Record<string, string> = {
-  "Best overall": "bg-[var(--gradient-primary)] text-primary-foreground",
+  "Best overall": "grad-primary text-primary-foreground",
   Strong: "bg-accent text-accent-foreground",
   Adequate: "bg-accent text-accent-foreground",
   Situational: "bg-secondary text-secondary-foreground",
@@ -20,7 +20,7 @@ function Stars({ score }: { score: number }) {
         aria-label={`${score} out of 5`}
       >
         <div
-          className="absolute inset-y-0 left-0 rounded-full bg-[var(--gradient-primary)]"
+          className="absolute inset-y-0 left-0 rounded-full grad-primary"
           style={{ width: `${pct}%` }}
         />
       </div>
@@ -55,9 +55,7 @@ function CourseCard({ course }: { course: Course }) {
         course.rank === 1 ? "border-primary/35" : "border-border"
       }`}
     >
-      {course.rank === 1 ? (
-        <div className="absolute inset-x-0 top-0 h-1.5 bg-[var(--gradient-primary)]" />
-      ) : null}
+      {course.rank === 1 ? <div className="absolute inset-x-0 top-0 h-1.5 grad-primary" /> : null}
 
       <div className="p-6 sm:p-7">
         <div className="flex flex-wrap items-start justify-between gap-4">
@@ -196,7 +194,7 @@ function CourseCard({ course }: { course: Course }) {
                 href={course.url}
                 target="_blank"
                 rel="noopener noreferrer nofollow"
-                className="group inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-5 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform duration-300 hover:-translate-y-0.5"
+                className="group inline-flex items-center gap-2 rounded-xl grad-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform duration-300 hover:-translate-y-0.5"
               >
                 Verify the published outcomes yourself
                 <span className="transition-transform duration-300 group-hover:translate-x-1">

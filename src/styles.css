@@ -286,6 +286,10 @@
   }
 }
 
+@utility grad-primary {
+  background-image: var(--gradient-primary);
+}
+
 @utility text-gradient {
   background: var(--gradient-primary);
   -webkit-background-clip: text;

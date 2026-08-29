@@ -6,7 +6,7 @@ const DIFFICULTY_TONE: Record<string, string> = {
   Intermediate: "bg-accent text-accent-foreground",
   "Intermediate+": "bg-accent text-accent-foreground",
   Advanced: "bg-[color-mix(in_oklab,var(--warning)_18%,transparent)] text-[oklch(0.45_0.14_62)]",
-  Expert: "bg-[var(--gradient-primary)] text-primary-foreground",
+  Expert: "grad-primary text-primary-foreground",
 };
 
 export function ProjectLadder() {
@@ -16,7 +16,7 @@ export function ProjectLadder() {
         <Reveal key={p.n} delay={(i % 3) * 60}>
           <article className="surface-card flex h-full flex-col gap-3 p-5">
             <div className="flex items-center justify-between gap-3">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--gradient-primary)] font-[family-name:var(--font-display)] text-sm font-bold tabular-nums text-primary-foreground shadow-[var(--shadow-glow)]">
+              <span className="flex h-9 w-9 items-center justify-center rounded-xl grad-primary font-[family-name:var(--font-display)] text-sm font-bold tabular-nums text-primary-foreground shadow-[var(--shadow-glow)]">
                 {p.n}
               </span>
               <div className="flex flex-wrap items-center justify-end gap-1.5">

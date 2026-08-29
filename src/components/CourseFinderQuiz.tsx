@@ -57,7 +57,7 @@ export function CourseFinderQuiz() {
   return (
     <div id="course-finder" className="scroll-mt-28">
       <div className="relative overflow-hidden rounded-[1.75rem] border border-primary/25 bg-card p-6 shadow-[var(--shadow-card)] sm:p-8">
-        <div className="absolute inset-x-0 top-0 h-1.5 bg-[var(--gradient-primary)]" />
+        <div className="absolute inset-x-0 top-0 h-1.5 grad-primary" />
         <div
           aria-hidden
           className="absolute -right-24 -top-24 h-64 w-64 rounded-full blur-3xl"
@@ -76,7 +76,7 @@ export function CourseFinderQuiz() {
 
           <div className="mt-5 h-1.5 w-full overflow-hidden rounded-full bg-secondary">
             <div
-              className="h-full rounded-full bg-[var(--gradient-primary)] transition-all duration-500"
+              className="h-full rounded-full grad-primary transition-all duration-500"
               style={{ width: `${(Object.keys(answers).length / total) * 100}%` }}
             />
           </div>
@@ -131,7 +131,7 @@ export function CourseFinderQuiz() {
               <button
                 type="button"
                 onClick={() => setOpen(true)}
-                className="rounded-xl bg-[var(--gradient-primary)] px-4 py-2 text-xs font-semibold text-primary-foreground shadow-[var(--shadow-glow)]"
+                className="rounded-xl grad-primary px-4 py-2 text-xs font-semibold text-primary-foreground shadow-[var(--shadow-glow)]"
               >
                 Show my best-fit course now
               </button>
@@ -178,7 +178,7 @@ function ResultModal({
         className="relative my-auto w-full max-w-2xl overflow-hidden rounded-[1.75rem] border border-primary/25 bg-card shadow-[var(--shadow-card)]"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="h-1.5 w-full bg-[var(--gradient-primary)]" />
+        <div className="h-1.5 w-full grad-primary" />
         <button
           type="button"
           onClick={onClose}
@@ -250,7 +250,7 @@ function ResultModal({
                 href={best.url}
                 target="_blank"
                 rel="noopener noreferrer nofollow"
-                className="group inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-5 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform duration-300 hover:-translate-y-0.5"
+                className="group inline-flex items-center gap-2 rounded-xl grad-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform duration-300 hover:-translate-y-0.5"
               >
                 Check the curriculum and published outcomes
                 <span className="transition-transform duration-300 group-hover:translate-x-1">
@@ -261,7 +261,7 @@ function ResultModal({
               <a
                 href="#courses-reviewed"
                 onClick={onClose}
-                className="inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-5 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)]"
+                className="inline-flex items-center gap-2 rounded-xl grad-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)]"
               >
                 Read the full evaluation
               </a>

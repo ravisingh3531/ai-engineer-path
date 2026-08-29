@@ -388,7 +388,7 @@ function Hero() {
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <a
                 href="#gap-map"
-                className="group inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-5 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform duration-300 hover:-translate-y-0.5"
+                className="group inline-flex items-center gap-2 rounded-xl grad-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform duration-300 hover:-translate-y-0.5"
               >
                 Score yourself on the gap map
                 <span className="transition-transform duration-300 group-hover:translate-x-1">
@@ -512,7 +512,7 @@ function AnswerBox() {
   return (
     <section id="answer" className="scroll-mt-28 mt-16">
       <div className="relative overflow-hidden rounded-[1.75rem] border border-primary/25 bg-card shadow-[var(--shadow-card)]">
-        <div className="absolute inset-x-0 top-0 h-1 bg-[var(--gradient-primary)]" />
+        <div className="absolute inset-x-0 top-0 h-1 grad-primary" />
         <div
           className="absolute -right-24 -top-24 h-64 w-64 rounded-full blur-3xl"
           style={{ background: "color-mix(in oklab, var(--primary) 14%, transparent)" }}
@@ -537,7 +537,7 @@ function SectionBlock({ section, index }: { section: Section; index: number }) {
       <Reveal>
         <div className="hairline mb-10" />
         <div className="flex items-start gap-5">
-          <div className="relative flex h-14 w-14 flex-none items-center justify-center rounded-2xl bg-[var(--gradient-primary)] text-2xl shadow-[var(--shadow-glow)]">
+          <div className="relative flex h-14 w-14 flex-none items-center justify-center rounded-2xl grad-primary text-2xl shadow-[var(--shadow-glow)]">
             <span aria-hidden>{section.badge}</span>
             <span className="absolute -bottom-2 -right-2 rounded-lg border border-border bg-card px-1.5 py-0.5 font-[family-name:var(--font-display)] text-[0.62rem] font-bold tabular-nums text-primary">
               {section.num}
@@ -609,7 +609,7 @@ function ActionPlanExtras() {
 
       <a
         href="#logicmojo-contact"
-        className="group mt-7 inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-5 py-3.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform duration-300 hover:-translate-y-0.5"
+        className="group mt-7 inline-flex items-center gap-2 rounded-xl grad-primary px-5 py-3.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform duration-300 hover:-translate-y-0.5"
       >
         See the LogicMojo AI &amp; ML Course curriculum and upcoming batches
         <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>

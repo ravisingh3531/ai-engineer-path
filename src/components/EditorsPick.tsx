@@ -29,7 +29,7 @@ export function EditorsPick() {
 
   return (
     <div className="relative mt-10 overflow-hidden rounded-[1.75rem] border border-primary/30 bg-card shadow-[var(--shadow-card)]">
-      <div className="absolute inset-x-0 top-0 h-1.5 bg-[var(--gradient-primary)]" />
+      <div className="absolute inset-x-0 top-0 h-1.5 grad-primary" />
       <div
         className="absolute -right-28 -top-28 h-72 w-72 rounded-full blur-3xl"
         style={{ background: "color-mix(in oklab, var(--primary) 16%, transparent)" }}
@@ -37,7 +37,7 @@ export function EditorsPick() {
       />
 
       <div className="relative p-6 sm:p-9">
-        <span className="inline-flex items-center gap-2 rounded-full bg-[var(--gradient-primary)] px-3.5 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-primary-foreground shadow-[var(--shadow-glow)]">
+        <span className="inline-flex items-center gap-2 rounded-full grad-primary px-3.5 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-primary-foreground shadow-[var(--shadow-glow)]">
           ⭐ Editor's pick — recommended structured path
         </span>
 
@@ -129,7 +129,7 @@ export function EditorsPick() {
 
         <a
           href="#logicmojo-contact"
-          className="group mt-8 inline-flex items-center gap-2 rounded-xl bg-[var(--gradient-primary)] px-5 py-3.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform duration-300 hover:-translate-y-0.5"
+          className="group mt-8 inline-flex items-center gap-2 rounded-xl grad-primary px-5 py-3.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform duration-300 hover:-translate-y-0.5"
         >
           Explore the LogicMojo AI &amp; ML Course — curriculum, projects and batch schedule
           <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>

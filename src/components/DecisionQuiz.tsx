@@ -24,7 +24,7 @@ export function DecisionQuiz() {
 
   return (
     <div className="relative mt-8 overflow-hidden rounded-[1.75rem] border border-primary/25 bg-card shadow-[var(--shadow-card)]">
-      <div className="absolute inset-x-0 top-0 h-1 bg-[var(--gradient-primary)]" />
+      <div className="absolute inset-x-0 top-0 h-1 grad-primary" />
       <div className="p-6 sm:p-9">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <span className="inline-flex items-center gap-2 rounded-full bg-accent px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-accent-foreground">
@@ -37,7 +37,7 @@ export function DecisionQuiz() {
 
         <div className="mt-5 h-1.5 w-full overflow-hidden rounded-full bg-secondary">
           <div
-            className="h-full rounded-full bg-[var(--gradient-primary)] transition-all duration-500"
+            className="h-full rounded-full grad-primary transition-all duration-500"
             style={{ width: `${(Math.min(step, QUIZ.length) / QUIZ.length) * 100}%` }}
           />
         </div>

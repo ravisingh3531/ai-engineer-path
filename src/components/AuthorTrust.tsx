@@ -12,7 +12,7 @@ export function AuthorTrust() {
       <div className="surface-card mt-7 p-6 sm:p-8">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
           <div
-            className="h-20 w-20 flex-none rounded-2xl bg-[var(--gradient-primary)] shadow-[var(--shadow-glow)]"
+            className="h-20 w-20 flex-none rounded-2xl grad-primary shadow-[var(--shadow-glow)]"
             aria-label="Author photo placeholder"
           />
           <div className="min-w-0">

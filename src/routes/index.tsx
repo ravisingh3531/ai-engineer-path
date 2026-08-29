@@ -25,7 +25,16 @@ import {
   finalRecommendation,
 } from "@/content/article-2";
 import { FAQS } from "@/content/data";
+import { CourseReviews, CourseComparisonTable } from "@/components/CourseReviews";
+import { CourseFinderQuiz } from "@/components/CourseFinderQuiz";
+import {
+  recommendationMd,
+  methodologyMd,
+  chooseMd,
+  beyondMarketingMd,
+} from "@/content/courses";
 import heroArt from "@/assets/hero-transition.jpg";
+
 
 const TITLE = "How to Switch from Full Stack Developer to AI Engineer 2026";
 const DESCRIPTION =
@@ -179,6 +188,55 @@ const SECTIONS: Section[] = [
     extra: <EditorsPick />,
     after: s8alts,
   },
+  {
+    id: "courses-reviewed",
+    num: "8B",
+    badge: "🏅",
+    kicker: "Ten programs, scored for this transition",
+    title: "The 10 AI/ML Courses, Reviewed for Full Stack Developers",
+    body: `${recommendationMd}\n\n${methodologyMd}`,
+    extra: (
+      <div className="mt-10 space-y-12">
+        <div>
+          <h3 className="font-[family-name:var(--font-display)] text-xl font-bold tracking-[-0.02em] text-foreground">
+            The Comparison Table
+          </h3>
+          <p className="mt-2 mb-4 text-muted-foreground">
+            Every score is the weighted editorial fit rating defined above — read the full evaluation
+            underneath before acting on any row.
+          </p>
+          <CourseComparisonTable />
+        </div>
+
+        <div id="course-reviews" className="scroll-mt-28">
+          <h3 className="font-[family-name:var(--font-display)] text-xl font-bold tracking-[-0.02em] text-foreground">
+            The Ten Reviews — Prerequisites to Placement
+          </h3>
+          <p className="mt-2 text-muted-foreground">
+            Each card opens into the same eleven-row evaluation: prerequisites, Python and ML foundations,
+            GenAI depth, real-world projects, deployment and MLOps, mentoring, interview preparation,
+            resume and LinkedIn support, hiring partners, placement mechanics and the alumni evidence you
+            can actually verify.
+          </p>
+          <CourseReviews />
+        </div>
+
+        <div>
+          <h3 className="font-[family-name:var(--font-display)] text-xl font-bold tracking-[-0.02em] text-foreground">
+            Course Finder Quiz — Eleven Questions, One Best Fit
+          </h3>
+          <p className="mt-2 mb-5 text-muted-foreground">
+            Answer as your busiest self, not your most optimistic one. The result opens in a pop-up with the
+            course name, the reasoning behind it, the curriculum, what its placement support actually means
+            and where to verify it.
+          </p>
+          <CourseFinderQuiz />
+        </div>
+      </div>
+    ),
+    after: `${chooseMd}\n\n${beyondMarketingMd}`,
+  },
+
   {
     id: "interviews",
     num: "09",

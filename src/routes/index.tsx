@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { Markdown } from "@/components/Markdown";
+import { AuthorNote } from "@/components/AuthorNote";
+import { TrustPillars } from "@/components/TrustPillars";
 import { Reveal } from "@/components/Reveal";
 import { PhaseStepper } from "@/components/PhaseStepper";
 import { ProjectLadder } from "@/components/ProjectLadder";
@@ -57,7 +59,22 @@ export const Route = createFileRoute("/")({
               "@type": "Article",
               headline: TITLE,
               description: DESCRIPTION,
-              author: { "@type": "Person", name: "LogicMojo Editorial" },
+              author: {
+                "@type": "Person",
+                name: "LogicMojo Editorial",
+                jobTitle: "AI hiring researcher and former full stack engineer",
+                description:
+                  "Twelve years shipping production web software before moving into applied AI; researches how Indian teams hire AI engineers.",
+                knowsAbout: [
+                  "AI Engineering",
+                  "Machine Learning Engineering",
+                  "Generative AI",
+                  "Retrieval Augmented Generation",
+                  "MLOps",
+                  "Full Stack Development",
+                  "Tech hiring in India",
+                ],
+              },
               publisher: {
                 "@type": "Organization",
                 name: "LogicMojo",
@@ -304,6 +321,8 @@ function Guide() {
                 <Markdown source={intro} />
               </article>
             </Reveal>
+
+            <TrustPillars />
 
             <Reveal>
               <AnswerBox />
@@ -573,6 +592,8 @@ function SectionBlock({ section, index }: { section: Section; index: number }) {
       ) : null}
 
       {section.afterExtra ? <div className="mt-10">{section.afterExtra}</div> : null}
+
+      <AuthorNote id={section.id} />
 
       {index === SECTIONS.length - 1 ? null : <div className="pt-4" />}
     </section>

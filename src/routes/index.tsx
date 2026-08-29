@@ -355,9 +355,10 @@ function Hero() {
 
           <Reveal delay={260}>
             <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-xs font-medium text-muted-foreground">
-              <span>Sections 1–5 of 12</span>
+              <span>Complete guide · 14 sections</span>
               <span className="hairline hidden w-px sm:block" />
-              <span>~40 min read</span>
+              <span>~75 min read</span>
+
               <span>Updated 2026</span>
             </div>
           </Reveal>
@@ -422,15 +423,34 @@ function TableOfContents() {
           ))}
         </ol>
 
-        <div className="mt-6 rounded-2xl border border-border bg-card p-4 shadow-[var(--shadow-soft)]">
+        <div className="mt-6 rounded-2xl border border-primary/25 bg-card p-4 shadow-[var(--shadow-soft)]">
           <p className="text-[0.68rem] font-bold uppercase tracking-[0.14em] text-primary">
-            Pending
+            Jump to the tools
           </p>
-          <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-            Sections 6–12 — roadmap, projects, course comparison, interviews, career plan,
-            mistakes and the final action plan.
-          </p>
+          <ul className="mt-2 space-y-1.5 text-xs font-medium text-secondary-foreground">
+            <li>
+              <a className="hover:text-primary" href="#roadmap">
+                Six-phase roadmap stepper
+              </a>
+            </li>
+            <li>
+              <a className="hover:text-primary" href="#courses">
+                Course comparison &amp; editor's pick
+              </a>
+            </li>
+            <li>
+              <a className="hover:text-primary" href="#action-plan">
+                Decision tool &amp; 30/60/90/180 checklist
+              </a>
+            </li>
+            <li>
+              <a className="hover:text-primary" href="#faqs">
+                20 FAQs
+              </a>
+            </li>
+          </ul>
         </div>
+
       </nav>
     </aside>
   );
